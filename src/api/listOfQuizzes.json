@@ -1,0 +1,27 @@
+[
+  {
+    "id": "1",
+    "title": "Which test should you take first?",
+    "imagePath": "../assets/thinking.jpg"
+  },
+  {
+    "id": "2",
+    "title": "What kind of cloud are you?",
+    "imagePath": "../assets/cloud.jpg"
+  },
+  {
+    "id": "3",
+    "title": "Choose 10 types of dogs and we can guess what dog do you like",
+    "imagePath": "../assets/dog.jpg"
+  },
+  {
+    "id": "4",
+    "title": "What color butterfly would you be?",
+    "imagePath": "../assets/butterfly.jpg"
+  },
+  {
+    "id": "5",
+    "title": "Which placeholder text matches your personality?",
+    "imagePath": "../assets/placeholder.png"
+  }
+]

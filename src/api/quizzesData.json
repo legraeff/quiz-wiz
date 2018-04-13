@@ -1,9 +1,8 @@
 [
   {
-    "id": "0",
+    "id": "1",
     "title": {
-      "text": "Find something that I was not creative enough to think about yet (but do check tomorrow!",
-      "imagePath": "pathpathpath"
+      "text": "Find something that I was not creative enough to think about yet (but do check tomorrow!"
     },
     "questions" : [
       {
@@ -13,7 +12,7 @@
           {
             "answerId": "1",
             "answerText": "Fine",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "normal",
@@ -24,7 +23,7 @@
           {
             "answerId": "2",
             "answerText": "Kinda angry with this stupid quiz",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "angry",
@@ -35,7 +34,7 @@
           {
             "answerId": "3",
             "answerText": "Better now with this awesome quiz!",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "happy",
@@ -52,7 +51,7 @@
           {
             "answerId": "1",
             "answerText": "It's the worst thing I've ever seem on my life",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "angry",
@@ -63,7 +62,7 @@
           {
             "answerId": "2",
             "answerText": "It is beautiful!",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "happy",
@@ -74,7 +73,7 @@
           {
             "answerId": "3",
             "answerText": "Well...you could probably make it a little better...",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "normal",
@@ -91,7 +90,7 @@
           {
             "answerId": "1",
             "answerText": "Black, just like my soul",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "angry",
@@ -102,7 +101,7 @@
           {
             "answerId": "2",
             "answerText": "Black...but nothing to do with my soul",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "happy",
@@ -117,7 +116,7 @@
           {
             "answerId": "3",
             "answerText": "Something colorful and happy!",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "",
             "pontuation": [
               {
                 "type": "happy",
@@ -138,7 +137,7 @@
           {
             "answerId": "1",
             "answerText": "A beautiful, colorful butterfly",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "../assets/butterfly.jpg",
             "pontuation": [
               {
                 "type": "happy",
@@ -149,7 +148,7 @@
           {
             "answerId": "2",
             "answerText": "A innocent, fluffy sheep",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "../assets/lamb.jpg",
             "pontuation": [
               {
                 "type": "happy",
@@ -160,7 +159,7 @@
           {
             "answerId": "3",
             "answerText": "A bloodthristy shark",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "../assets/shark.jpg",
             "pontuation": [
               {
                 "type": "angry",
@@ -171,7 +170,7 @@
           {
             "answerId": "4",
             "answerText": "A dog",
-            "answerImagePath": "pathpathpath",
+            "answerImagePath": "../assets/dog.jpg",
             "pontuation": [
               {
                 "type": "normal",
@@ -186,17 +185,20 @@
       {
         "key": "happy",
         "title": "You are really happy!",
-        "text": "I'm glad. Keep it up :)"
+        "text": "I'm glad. Keep it up :)",
+        "resultImagePath": ""
       },
       {
         "key": "normal",
         "title": "Hey, you are kinda normal.",
-        "text": "That is not bad tho!"
+        "text": "That is not bad tho!",
+        "resultImagePath": "../assets/dog.jpg"
       },
       {
         "key": "angry",
         "title": "Wow dude",
-        "text": "you are kinda hardcore"
+        "text": "you are kinda hardcore",
+        "resultImagePath": "../assets/shark.jpg"
       }
     ]
   }

@@ -1,13 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Quiz from './Quiz.jsx';
+import { Switch, Route } from 'react-router-dom'
+import Quiz from './quiz/Quiz.jsx';
+import Home from './Home.jsx';
 
 const Content = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path='/quiz-one' render={()=><Quiz quizId="0"/>}/>
-    </Switch>
-  </BrowserRouter>
+  <Switch>
+    <Route path='/quiz/:id' component={Quiz}/>
+    <Route path='/home' component={Home}/>
+    <Route path='/' component={Home}/>
+  </Switch>
 )
 
 export default Content

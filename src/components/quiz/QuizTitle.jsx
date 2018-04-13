@@ -2,7 +2,7 @@ import React from 'react';
 
 function QuizTitle(props) {
   return (
-    <h2> {props.title} </h2>
+    <h1> {props.title} </h1>
   );
 }
 

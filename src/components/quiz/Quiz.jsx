@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import Question from './Question';
 import Result from './Result';
 import QuizTitle from './QuizTitle';
-import quizzesData from '../api/quizzesData.json'
+import quizzesData from '../../api/quizzesData.json'
 
 class Quiz extends Component {
   constructor(props) {
     super(props);
-    const selectedQuiz = quizzesData.find(quiz => quiz.id === this.props.quizId);
+    const selectedQuiz = quizzesData.find(quiz => quiz.id === props.match.params.id);
+    if (!selectedQuiz) {
+      this.state = {notFound: true};
+      return
+    }
     this.state = {
       title: selectedQuiz.title,
       questions: selectedQuiz.questions,
@@ -70,8 +74,11 @@ class Quiz extends Component {
   }
 
   render() {
+    if (this.state.notFound) {
+      return (<div></div>)
+    }
     return (
-      <div>
+      <div className="container">
         <QuizTitle title={this.state.title.text}/>
         {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
         <Result resultData={this.state.result}/>
