@@ -1,0 +1,203 @@
+[
+  {
+    "id": "0",
+    "title": {
+      "text": "Find something that I was not creative enough to think about yet (but do check tomorrow!",
+      "imagePath": "pathpathpath"
+    },
+    "questions" : [
+      {
+        "questionId": "1",
+        "questionTitle": "How are you doing?",
+        "answers": [
+          {
+            "answerId": "1",
+            "answerText": "Fine",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "normal",
+                "value": 0.5
+              }
+            ]
+          },
+          {
+            "answerId": "2",
+            "answerText": "Kinda angry with this stupid quiz",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "angry",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "answerId": "3",
+            "answerText": "Better now with this awesome quiz!",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "questionId": "2",
+        "questionTitle": "What do you think of the layout so far?",
+        "answers": [
+          {
+            "answerId": "1",
+            "answerText": "It's the worst thing I've ever seem on my life",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "angry",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "answerId": "2",
+            "answerText": "It is beautiful!",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "answerId": "3",
+            "answerText": "Well...you could probably make it a little better...",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "normal",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "questionId": "3",
+        "questionTitle": "What is your favorite color?",
+        "answers": [
+          {
+            "answerId": "1",
+            "answerText": "Black, just like my soul",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "angry",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "answerId": "2",
+            "answerText": "Black...but nothing to do with my soul",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1
+              },
+              {
+                "type": "normal",
+                "value": 1
+              }
+            ]
+          },
+          {
+            "answerId": "3",
+            "answerText": "Something colorful and happy!",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1
+              },
+              {
+                "type": "normal",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "questionId": "4",
+        "questionTitle": "What is your favorite animal?",
+        "answers": [
+          {
+            "answerId": "1",
+            "answerText": "A beautiful, colorful butterfly",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1.25
+              }
+            ]
+          },
+          {
+            "answerId": "2",
+            "answerText": "A innocent, fluffy sheep",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "happy",
+                "value": 1.25
+              }
+            ]
+          },
+          {
+            "answerId": "3",
+            "answerText": "A bloodthristy shark",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "angry",
+                "value": 1.5
+              }
+            ]
+          },
+          {
+            "answerId": "4",
+            "answerText": "A dog",
+            "answerImagePath": "pathpathpath",
+            "pontuation": [
+              {
+                "type": "normal",
+                "value": 1
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "resultOptions": [
+      {
+        "key": "happy",
+        "title": "You are really happy!",
+        "text": "I'm glad. Keep it up :)"
+      },
+      {
+        "key": "normal",
+        "title": "Hey, you are kinda normal.",
+        "text": "That is not bad tho!"
+      },
+      {
+        "key": "angry",
+        "title": "Wow dude",
+        "text": "you are kinda hardcore"
+      }
+    ]
+  }
+]
