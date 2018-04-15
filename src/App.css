@@ -1,9 +1,12 @@
-* {
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+
+*, *:after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Helvetica";
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
 }
 
@@ -13,6 +16,8 @@ h1, h2 {
 
 h1 {
   font-size: 2.5em;
+  margin: 0;
+  padding: 30px 0;
 }
 h2 {
   font-size: 1.5em;
@@ -24,78 +29,63 @@ h2 {
 }
 
 .question {
-  margin: 50px 0;
+  padding-top: 30px;
 }
 
 .answers {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0;
+  margin: 0;
 }
 
 .answer-option {
-  overflow: hidden;
-  border-radius: 15px;
   list-style: none;
   flex: 1 1 0;
   margin: 5px;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  max-height: 300px;
   max-width: 250px;
-  background: #ffd7e9; /* Old browsers */
-  background: linear-gradient(to right, #ffd7e9 0%,#d9d6ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+
 .answer-option input[type=radio] {
-  position: relative;
-  height: 100%;
   position: absolute;
-  width: 100%;
-  -webkit-appearance: none;
-  margin: 0;
-  transition: all 1s;
-}
-
-.answer-option input[type=radio]:checked {
-}
-
-.answer-option input[type=radio]:after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  width: 100%;
   opacity: 0;
-  background: black;
-  transition: opacity 0s, transform .5s;
-}
-
-.answer-option input[type=radio]:checked:after {
-  transform: scaleY(1000);
-  opacity: 0.5;
-
 }
 
 .answer-option input[type=radio]:checked + label {
+  background: #53568e;
   color: white;
-  background: black;
 }
 
 .answer-option label {
-  padding: 15px;
+  border-radius: 15px;
   display: block;
+  height: 100%;
+  cursor: pointer;
+  transition: all .5s;
+  display: flex;
+  flex-direction: column;
+  background: white;
+}
+.answer-option label:hover {
+  transform: scale(1.025);
+}
+.answer-option label p {
+  padding: 20px;
+  margin: 0;
   flex-basis: 30%;
-  font-size: 1.1em;
-  line-height: 1.25em;
-  transition: all 1s;
+  font-size: 20px;
+}
+.answer-option label div {
+  flex-basis: 70%;
+}
+.answer-option label div img {
+  width: 100%;
+  max-height: 100%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
 }
 
-.answer-option img {
-  width: 100%;
-  flex-basis: 70%;
-  max-height: 100%;
-  overflow: hidden;
-}
 .answer-option .full-img {
   flex-basis: 100%;
 }
@@ -103,11 +93,11 @@ h2 {
 .result {
   margin: 0 10%;
   display: flex;
+  margin-top: 100px;
   flex-wrap: wrap;
   border-radius: 25px;
   overflow: hidden;
-  background: #ffd7e9; /* Old browsers */
-  background: linear-gradient(to right, #ffd7e9 0%, #d5c8ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: white;
 }
 .result-image {
   flex-basis: 40%;
@@ -119,9 +109,15 @@ h2 {
   width: 100%;
   filter: opacity(.75);
 }
+.result-title {
+  padding-top: 30px;
+  padding-left: 30px;
+  text-align: left;
+}
 .result-text {
+  padding-left: 30px;
+  font-size: 1.15em;
   flex-basis: 60%;
-  text-align: center;
 }
 
 .navbar {
@@ -132,6 +128,10 @@ h2 {
 .navbar .nav-logo {
   padding-left: 30px;
   padding-right: 30px;
+  color: #68639e;
+  font-size: 1.5em;
+  font-family: "Pacifico", monospace;
+
 }
 .nav-logo img {
   max-width: 50px;
@@ -140,6 +140,7 @@ h2 {
   margin: 0 auto;
   border-radius: 50%;
 }
+
 .nav {
   list-style: none;
   display: flex;
@@ -163,13 +164,13 @@ h2 {
 }
 @keyframes jiggle {
   0% {
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
   }
   25% {
-    transform: rotate(+2deg);
+    transform: rotate(+1deg);
   }
   50% {
-    transform: rotate(-2deg);
+    transform: rotate(-1deg);
   }
   100% {
     transform: rotate(0deg);
@@ -189,20 +190,31 @@ footer {
 .quiz-card-group {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 
 .quiz-card {
   display: block;
-  padding: 20px;
-  margin: 1% 0;
+  margin: 1%;
   flex-basis: 30%;
-  background: white;
-  border: 10px double #EDCCF5;
+  position: relative;
+  z-index: 1;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 75px;
 }
 .quiz-card img {
   margin: 0 auto;
   display: block;
+  border-radius: 50%;
+}
+.quiz-card-bg {
+  position: absolute;
+  height: calc(100% - 100px);
+  width: 100%;
+  background: white;
+  z-index: -1;
+  top: 100px;
+  left: 0;
 }
 .quiz-card h3 {
   text-align: center;

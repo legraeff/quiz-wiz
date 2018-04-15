@@ -78,10 +78,12 @@ class Quiz extends Component {
       return (<div></div>)
     }
     return (
-      <div className="container">
-        <QuizTitle title={this.state.title.text}/>
-        {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
-        <Result resultData={this.state.result}/>
+      <div className="pink-bg">
+        <div className="container">
+          <QuizTitle title={this.state.title.text}/>
+          {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
+          <Result resultData={this.state.result}/>
+        </div>
       </div>
     );
   }

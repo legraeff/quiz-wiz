@@ -1,27 +1,34 @@
 import React from 'react';
 
 function AnswerOption(props) {
-  let text;
+  let answerText;
   let imageClass;
+  let answerImage
   if (props.answerData.answerText) {
-    text = <label> {props.answerData.answerText} </label>
+    answerText = <p> {props.answerData.answerText} </p>
   }
   else {
     imageClass = 'full-img';
   }
+  if (props.answerData.answerImagePath) {
+    answerImage = <div className={imageClass}><img src={props.answerData.answerImagePath} alt={props.answerData.answerText}/></div>
+  }
+
 
   return (
     <li className="answer-option">
-      <img className={imageClass} src={props.answerData.answerImagePath ? props.answerData.answerImagePath : '../assets/placeholder.png'} alt={props.answerData.answerText}/>
       <input
         type="radio"
         name={props.questionId}
-        id={"answer-" + props.answerData.answerId}
+        id={"q-" + props.questionId + "-a-" + props.answerData.answerId}
         disabled={props.quizFinished}
         value={props.answerData.answerId}
         onChange={props.handleAnswer}
       />
-      {text}
+      <label htmlFor={"q-" + props.questionId + "-a-" + props.answerData.answerId}>
+        {answerImage}
+        {answerText}
+      </label>
     </li>
   );
 
