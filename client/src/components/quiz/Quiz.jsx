@@ -2,27 +2,42 @@ import React, { Component } from 'react';
 import Question from './Question';
 import Result from './Result';
 import QuizTitle from './QuizTitle';
-import quizzesData from '../../api/quizzesData.json'
 
 class Quiz extends Component {
   constructor(props) {
     super(props);
-    const selectedQuiz = quizzesData.find(quiz => quiz.id === props.match.params.id);
-    if (!selectedQuiz) {
-      this.state = {notFound: true};
-      return
-    }
     this.state = {
-      title: selectedQuiz.title,
-      questions: selectedQuiz.questions,
+      title: '',
+      questions: [],
       isQuizFinished: false,
-      resultOptions: selectedQuiz.resultOptions,
-      numberOfQuestions: selectedQuiz.questions.length,
-      selectedAnswers: new Map(),
+      resultOptions: '',
+      numberOfQuestions: '',
+      selectedAnswers: '',
       result: null
-    };
+    }
     this.handleAnswer = this.handleAnswer.bind(this);
   }
+
+  componentWillMount() {
+    const selectedQuizId = this.props.match.params.id;
+    fetch(`http://localhost:8080/api/${selectedQuizId}`)
+    .then(results => {
+      return results.json();
+    }).then(results => {
+      let foundQuiz = results.data[0];
+      console.log(foundQuiz);
+      this.setState({
+        title: foundQuiz.title,
+        questions: foundQuiz.questions,
+        isQuizFinished: false,
+        resultOptions: foundQuiz.resultOptions,
+        numberOfQuestions: foundQuiz.questions.length,
+        selectedAnswers: new Map(),
+        result: null
+      });
+    });
+  }
+
 
   componentDidUpdate() {
     if (this.state.result) { return }
@@ -74,9 +89,6 @@ class Quiz extends Component {
   }
 
   render() {
-    if (this.state.notFound) {
-      return (<div></div>)
-    }
     return (
       <div className="pink-bg">
         <div className="container">
