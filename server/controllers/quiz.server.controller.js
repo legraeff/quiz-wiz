@@ -24,3 +24,17 @@ export const getQuizById = (req,res) => {
     }
   })
 }
+
+export const createQuiz = (req,res) => {
+  req.body.questions = req.body.questions.filter(question => question.questionTitle);
+  req.body.questions.map(q => {
+    return q.answers = q.answers.filter(answer => answer.answerTitle)
+  })
+  const newQuiz = new Quiz(req.body);
+  newQuiz.save((err,data) => {
+    if (err) {
+      return res.json({'success':false,'message':'Some Error'});
+    }
+    return res.json({'success':true,'message':'Quiz added successfully',data});
+  })
+}

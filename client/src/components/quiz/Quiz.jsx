@@ -25,7 +25,6 @@ class Quiz extends Component {
       return results.json();
     }).then(results => {
       let foundQuiz = results.data[0];
-      console.log(foundQuiz);
       this.setState({
         title: foundQuiz.title,
         questions: foundQuiz.questions,
@@ -64,10 +63,10 @@ class Quiz extends Component {
     let pontuations = this.retrievePontuations();
     let totals = {};
     for (let item of pontuations) {
-      if (!totals[item.type]) {
-        totals[item.type] = 0;
+      if (!totals[item.key]) {
+        totals[item.key] = 0;
       }
-      totals[item.type] = totals[item.type] + item.value;
+      totals[item.key] = totals[item.key] + parseInt(item.value, 10);
     }
     this.findResult(totals);
   }
@@ -84,18 +83,16 @@ class Quiz extends Component {
 
   findResult(totals) {
     let resultKey = Object.keys(totals).reduce((a, b) => totals[a] > totals[b] ? a : b);
-    let finalResult = this.state.resultOptions.find(result => result.key === resultKey);
-    this.setState({ result: finalResult });
+    let finalResult = this.state.resultOptions.find(result => result.resultKey === resultKey);
+    finalResult ? this.setState({result: finalResult}) : this.setState({result: 'Result is undefined'})
   }
 
   render() {
     return (
-      <div className="pink-bg">
-        <div className="container">
-          <QuizTitle title={this.state.title.text}/>
-          {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
-          <Result resultData={this.state.result}/>
-        </div>
+      <div className="container">
+        <QuizTitle title={this.state.title.text}/>
+        {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
+        <Result resultData={this.state.result}/>
       </div>
     );
   }

@@ -17,21 +17,17 @@ var Schema = mongoose.Schema({
         {
           answerId: String,
           answerImagePath: String,
-          answerText: String,
-          pontuation: [
-            {
-            }
-          ]
+          answerTitle: String,
+          pontuation: [{}]
         }
       ]
     }
   ],
   resultOptions: [
     {
-      key: String,
-      resultImagePath: String,
-      title: String,
-      text: String
+      resultKey: String,
+      resultTitle: String,
+      resultText: String
     }
   ]
 });

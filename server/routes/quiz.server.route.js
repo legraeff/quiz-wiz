@@ -8,6 +8,7 @@ router.route('/')
       .get(quizController.getAllQuizzes)
 router.route('/:id')
       .get(quizController.getQuizById)
-
+router.route('/create')
+      .post(quizController.createQuiz)
 
 export default router;

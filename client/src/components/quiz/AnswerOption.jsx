@@ -1,17 +1,17 @@
 import React from 'react';
 
 function AnswerOption(props) {
-  let answerText;
+  let answerTitle;
   let imageClass;
   let answerImage
-  if (props.answerData.answerText) {
-    answerText = <p> {props.answerData.answerText} </p>
+  if (props.answerData.answerTitle) {
+    answerTitle = <p> {props.answerData.answerTitle} </p>
   }
   else {
     imageClass = 'full-img';
   }
   if (props.answerData.answerImagePath) {
-    answerImage = <div className={imageClass}><img src={props.answerData.answerImagePath} alt={props.answerData.answerText}/></div>
+    answerImage = <div className={imageClass}><img src={props.answerData.answerImagePath} alt={props.answerData.answerTitle}/></div>
   }
 
 
@@ -27,7 +27,7 @@ function AnswerOption(props) {
       />
       <label htmlFor={"q-" + props.questionId + "-a-" + props.answerData.answerId}>
         {answerImage}
-        {answerText}
+        {answerTitle}
       </label>
     </li>
   );
