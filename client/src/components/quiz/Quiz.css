@@ -69,6 +69,7 @@
   flex-grow: 1;
   padding-left: 30px;
   font-size: 1.15em;
+  color: #222;
 }
 .result-image {
   flex-basis: 40%;

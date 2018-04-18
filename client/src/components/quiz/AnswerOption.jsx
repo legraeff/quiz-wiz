@@ -2,8 +2,7 @@ import React from 'react';
 
 function AnswerOption(props) {
   let answerTitle;
-  let imageClass;
-  let answerImage
+  let answerImage;
   if (props.answerData.answerTitle) {
     answerTitle = <p className="answer-option-text"> {props.answerData.answerTitle} </p>
   }
