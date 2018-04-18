@@ -27,14 +27,15 @@ class ResultFactory extends Component {
 
   render() {
     return (
-      <div>
+      <div className="factory-item factory-item--double">
+        <p> Result {this.state.id + 1} </p>
         <div>
           <label htmlFor={this.state.id + '-resultTitle'}>Result Title</label>
           <input id={this.state.id + '-resultTitle'} name={this.state.id + '-resultTitle'} type="text" onChange={this.updateResultTitle}/>
         </div>
         <div>
           <label htmlFor={this.state.id + '-resultText'}>Result Text</label>
-          <input id={this.state.id + '-resultText'} name={this.state.id + '-resultText'} type="text" onChange={this.updateResultText}/>
+          <textarea rows="5" id={this.state.id + '-resultText'} name={this.state.id + '-resultText'} type="text" onChange={this.updateResultText}></textarea>
         </div>
         <div>
           <label htmlFor={this.state.id + '-resultKey'}>Result Key</label>

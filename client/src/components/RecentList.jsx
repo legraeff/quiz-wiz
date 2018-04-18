@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import QuizCard from './QuizCard.jsx';
 
-class Home extends Component {
+class RecentList extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,8 +22,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h1 className="page-title"> Check out some popular quizes: </h1>
+      <div>
+        <h1 className="page-title"> Check out some popular quizzes: </h1>
         <div className="quiz-card-group">
           {this.state.quizzes.map((quiz, i) => <QuizCard quizId={quiz._id} quizData={quiz.thumbnail} key={i} />)}
         </div>
@@ -32,4 +32,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default RecentList;

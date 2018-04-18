@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="pink-bg">
+        <div className="container">
           <Header />
           <Content/>
           <Footer/>

@@ -1,0 +1,82 @@
+.question {
+  padding-top: 30px;
+}
+
+.answer-group {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+  margin: 0;
+}
+
+.answer-option {
+  position: relative;
+  flex: 1 1 0;
+  max-width: 250px;
+  margin: 5px;
+  list-style: none;
+}
+
+.answer-option-input {
+  position: absolute;
+  opacity: 0;
+}
+
+.answer-option-input:checked + .answer-option-label {
+  background: #001161;
+  color: #deddd0;
+}
+.answer-option-label {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all .25s;
+  background: #deddd0;
+  color: #222;
+}
+.answer-option-label:hover {
+  transform: scale(1.025);
+}
+.answer-option-text {
+  flex-basis: 30%;
+  flex-grow: 1;
+  padding: 20px;
+  margin: 0;
+  font-size: 20px;
+}
+.answer-option-image {
+  flex-basis: 70%;
+  flex-grow: 1;
+}
+
+
+
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 100px 10%;
+  overflow: hidden;
+  background: #deddd0;
+}
+.result-title {
+  padding-left: 30px;
+  text-align: left;
+  color: #001161;
+}
+.result-text {
+  flex-basis: 60%;
+  flex-grow: 1;
+  padding-left: 30px;
+  font-size: 1.15em;
+}
+.result-image {
+  flex-basis: 40%;
+}
+.result-image img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  filter: opacity(.75);
+}

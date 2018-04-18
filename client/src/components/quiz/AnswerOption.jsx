@@ -5,19 +5,21 @@ function AnswerOption(props) {
   let imageClass;
   let answerImage
   if (props.answerData.answerTitle) {
-    answerTitle = <p> {props.answerData.answerTitle} </p>
-  }
-  else {
-    imageClass = 'full-img';
+    answerTitle = <p className="answer-option-text"> {props.answerData.answerTitle} </p>
   }
   if (props.answerData.answerImagePath) {
-    answerImage = <div className={imageClass}><img src={props.answerData.answerImagePath} alt={props.answerData.answerTitle}/></div>
+    answerImage = (
+      <div className="answer-option-image">
+        <img src={props.answerData.answerImagePath} alt={props.answerData.answerTitle}/>
+      </div>
+    )
   }
 
 
   return (
     <li className="answer-option">
       <input
+        className="answer-option-input"
         type="radio"
         name={props.questionId}
         id={"q-" + props.questionId + "-a-" + props.answerData.answerId}
@@ -25,7 +27,7 @@ function AnswerOption(props) {
         value={props.answerData.answerId}
         onChange={props.handleAnswer}
       />
-      <label htmlFor={"q-" + props.questionId + "-a-" + props.answerData.answerId}>
+      <label className="answer-option-label" htmlFor={"q-" + props.questionId + "-a-" + props.answerData.answerId}>
         {answerImage}
         {answerTitle}
       </label>

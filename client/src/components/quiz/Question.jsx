@@ -5,7 +5,7 @@ function Question(props) {
   return (
     <div className="question">
       <h2> {props.questionData.questionTitle} </h2>
-      <ul className="answers">
+      <ul className="answer-group">
         {props.questionData.answers.map((answer, i) => <AnswerOption handleAnswer={props.handleAnswer} quizFinished={props.quizFinished} questionId={props.questionData.questionId} answerData={answer} key={i} />)}
       </ul>
     </div>

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Quiz.css';
+
 import Question from './Question';
 import Result from './Result';
 import QuizTitle from './QuizTitle';
@@ -89,7 +91,7 @@ class Quiz extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <QuizTitle title={this.state.title.text}/>
         {this.state.questions.map((question, i) => <Question handleAnswer={this.handleAnswer} quizFinished={this.state.isQuizFinished} questionData={question} key={i} />)}
         <Result resultData={this.state.result}/>

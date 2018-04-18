@@ -6,10 +6,10 @@ class Header extends Component {
   render() {
     return (
       <nav className="navbar">
-        <a className="nav-logo nav-item" href="/home">Quiz Wiz</a>
-        <div className="nav">
-          <Link to="/" className="nav-item">Popular Quizzes</Link>
-          <Link to="/recent" className="nav-item">Recent Quizzes</Link>
+        <a className="navbar-logo" href="/home">Quiz Wiz</a>
+        <div className="navbar-nav">
+          <Link to="/recent" className="navbar-nav-item">Recent Quizzes</Link>
+          <Link to="/quiz-factory" className="navbar-nav-item navbar-nav-item--right">+ Create your quiz</Link>
         </div>
       </nav>
     )

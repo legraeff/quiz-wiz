@@ -1,0 +1,69 @@
+input[type="text"], .pontuation-input {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 3px 0;
+  border: 0;
+  border-radius: 3px;
+}
+.pontuation-input {
+  display: inline-block;
+  width: 50px;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin: 3px 0;
+  border: 0;
+  border-radius: 3px;
+}
+
+.factory-section {
+  padding-bottom: 15px;
+  border-bottom: 1px solid white;
+}
+
+.factory-section-title {
+  font-size: 1.3em;
+}
+
+.factory-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.factory-item {
+  padding: 10px 15px;
+  margin-bottom: 30px;
+  background: rgba(255,255,255,.10);
+}
+
+.factory-item--single {
+  flex-basis: 100%;
+}
+.factory-item--double {
+  flex-basis: 48%;
+}
+
+.answer-factory-item {
+  margin-top: 30px;
+}
+
+.factory-finish-button {
+  display: block;
+  padding: 10px 30px;
+  margin: 20px auto;
+  font-size: 1.5em;
+  font-family: "Varela Round";
+  border: 0;
+  cursor: pointer;
+  color: #deddd0;
+  background: #001161;
+}
+.factory-finish-button:hover {
+  animation: jiggle .5s;
+  /*on the app.css file*/
+}

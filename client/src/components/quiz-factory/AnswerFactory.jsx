@@ -45,26 +45,28 @@ class AnswerFactory extends Component {
   render() {
     let resultOptionsLength = this.props.resultOptions.length - 1;
     return (
-      <li>
+      <div className="factory-item factory-item--double answer-factory-item">
+        <p> Answer {this.state.id + 1} </p>
         <div>
           <label htmlFor={this.state.questionId + '-' + this.state.id + '-title'}>Answer Title</label>
           <input id={this.state.id + '-title'} name={this.state.id + '-title'} type="text" value={this.state.answerTitle} onChange={this.updateAnswerTitle}/>
         </div>
         <div>
+          <small> Pontuation for the result:</small>
           { this.props.resultOptions.map((resultOption, i) => {
             if (resultOptionsLength === i) {
               return(null)
             };
             return(
               <div key={i}>
-                <label htmlFor={this.state.questionId + '-' + this.state.id + '-' + resultOption.resultKey}>{resultOption.resultKey}</label>
-                <input id={this.state.questionId + '-' + this.state.id + '-' + resultOption.resultKey} name={resultOption.resultKey} type="number" step=".1" onChange={this.updatePontuation}/>
+                <input placeholder="0" className="pontuation-input" id={this.state.questionId + '-' + this.state.id + '-' + resultOption.resultKey} name={resultOption.resultKey} type="number" step=".1" onChange={this.updatePontuation}/>
+                <label htmlFor={this.state.questionId + '-' + this.state.id + '-' + resultOption.resultKey}>:  {resultOption.resultKey} </label>
               </div>
             )
           })
         }
         </div>
-      </li>
+      </div>
     );
   }
 

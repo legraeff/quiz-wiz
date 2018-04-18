@@ -42,13 +42,13 @@ class QuestionFactory extends Component {
 
   render() {
     return (
-      <div>
-        <p> Question {this.state.id} </p>
+      <div className="factory-item factory-item--single">
+        <p> Question {this.state.id + 1} </p>
         <label htmlFor={this.state.id + '-title'}>Question Title</label>
         <input id={this.state.id + '-title'} name={this.state.id + '-title'} type="text" onChange={this.updateQuestionTitle}/>
-        <ul>
+        <div className="factory-group">
           {this.state.answers.map((answer, i) => <AnswerFactory resultOptions={this.props.resultOptions} updateFunction={this.updateState} questionId={this.state.id} id={i} key={i} />)}
-        </ul>
+        </div>
       </div>
     );
   }

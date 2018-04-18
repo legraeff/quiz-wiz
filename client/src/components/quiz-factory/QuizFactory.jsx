@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './QuizFactory.css';
+
 import QuestionFactory from './QuestionFactory';
 import ResultFactory from './ResultFactory';
 
@@ -53,37 +55,52 @@ class QuizFactory extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
+        <h1 className="page-title"> Create your own quiz: </h1>
         <form onSubmit={this.handleSubmit}>
 
-          <h3> Thumbnail </h3>
-          <label htmlFor="thumbnail">Thumbnail Title</label>
-          <input required id="thumbnail" name="thumbnail" type="text" onChange={(e) => this.handleInput("thumbnail", "title", e)}/>
+          <section className="factory-section">
+            <h3 className="factory-section-title"> Thumbnail </h3>
+            <div className="factory-item factory-item--single">
+              <label htmlFor="thumbnail">Thumbnail Title</label>
+              <input required id="thumbnail" name="thumbnail" type="text" onChange={(e) => this.handleInput("thumbnail", "title", e)}/>
+            </div>
+          </section>
 
-          <h3> Title </h3>
-          <label htmlFor="title">Quiz Title</label>
-          <input required id="title" name="title" type="text" onChange={(e) => this.handleInput("title", "text", e)}/>
+          <section className="factory-section">
+            <h3 className="factory-section-title"> Title </h3>
+            <div className="factory-item factory-item--single">
+              <label htmlFor="title">Quiz Title</label>
+              <input required id="title" name="title" type="text" onChange={(e) => this.handleInput("title", "text", e)}/>
+            </div>
+          </section>
 
-          <h3> Results </h3>
-          {this.state.resultOptions.map((question, i) =>
-            <ResultFactory
-              updateFunction={this.updateState}
-              id={i}
-              key={i} />)
-          }
+          <section className="factory-section">
+            <h3 className="factory-section-title"> Results </h3>
+            <div className="factory-group">
+              {this.state.resultOptions.map((question, i) =>
+                <ResultFactory
+                  updateFunction={this.updateState}
+                  id={i}
+                  key={i} />)
+              }
+            </div>
+          </section>
 
+          <section className="factory-section">
+            <h3 className="factory-section-title"> Questions </h3>
+            <div className="factory-group">
+              {this.state.questions.map((question, i) =>
+                <QuestionFactory
+                  resultOptions={this.state.resultOptions}
+                  updateFunction={this.updateState}
+                  id={i}
+                  key={i} />)
+              }
+            </div>
+          </section>
 
-          <h3> Questions </h3>
-          {this.state.questions.map((question, i) =>
-            <QuestionFactory
-              resultOptions={this.state.resultOptions}
-              updateFunction={this.updateState}
-              id={i}
-              key={i} />)
-          }
-
-
-          <button>Send data!</button>
+          <button type="submit" className="factory-finish-button">Create my quiz!</button>
         </form>
       </div>
     );
