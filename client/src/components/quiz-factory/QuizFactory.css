@@ -43,9 +43,11 @@ textarea {
 
 .factory-item--single {
   flex-basis: 100%;
+  animation: slide-in-right .5s;
 }
 .factory-item--double {
   flex-basis: 48%;
+  animation: slide-in-right .5s;
 }
 
 .answer-factory-item {
@@ -66,4 +68,32 @@ textarea {
 .factory-finish-button:hover {
   animation: jiggle .5s;
   /*on the app.css file*/
+}
+
+.remove-button {
+  float: right;
+  cursor: pointer;
+  color: #ff6e00;
+  animation: slide-in-top .5s;
+}
+
+
+@keyframes slide-in-top {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-25%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
 }

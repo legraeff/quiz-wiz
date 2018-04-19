@@ -16,7 +16,7 @@ class QuizFactory extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.updateState = this.updateState.bind(this);
-
+    this.removeItem = this.removeItem.bind(this);
   }
 
   handleSubmit(event) {
@@ -53,6 +53,13 @@ class QuizFactory extends Component {
     }
   }
 
+  removeItem(id, array) {
+    let indexOfObject = this.state[array].map(o => o.id).indexOf(id);
+    let tempArray = this.state[array];
+    tempArray[indexOfObject]["isDeleted"] = true;
+    this.setState({[array]: tempArray})
+  }
+
   render() {
     return (
       <div>
@@ -78,11 +85,15 @@ class QuizFactory extends Component {
           <section className="factory-section">
             <h3 className="factory-section-title"> Results </h3>
             <div className="factory-group">
-              {this.state.resultOptions.map((question, i) =>
-                <ResultFactory
+              {this.state.resultOptions.map((result, i) => {
+                if (result.isDeleted) { return null };
+                return <ResultFactory
+                  removeFunction={this.removeItem}
                   updateFunction={this.updateState}
+                  isLast={this.state.resultOptions.length === i + 1}
                   id={i}
-                  key={i} />)
+                  key={i} />
+                })
               }
             </div>
           </section>
@@ -90,12 +101,16 @@ class QuizFactory extends Component {
           <section className="factory-section">
             <h3 className="factory-section-title"> Questions </h3>
             <div className="factory-group">
-              {this.state.questions.map((question, i) =>
-                <QuestionFactory
+              {this.state.questions.map((question, i) => {
+                if (question.isDeleted) { return null };
+                return <QuestionFactory
+                  removeFunction={this.removeItem}
                   resultOptions={this.state.resultOptions}
                   updateFunction={this.updateState}
+                  isLast={this.state.questions.length === i + 1}
                   id={i}
-                  key={i} />)
+                  key={i} />
+                })
               }
             </div>
           </section>

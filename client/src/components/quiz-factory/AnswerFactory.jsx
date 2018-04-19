@@ -43,7 +43,8 @@ class AnswerFactory extends Component {
   }
 
   render() {
-    let resultOptionsLength = this.props.resultOptions.length - 1;
+    let availableResults = this.props.resultOptions.filter(r => !r.isDeleted)
+    let resultOptionsLength = availableResults.length - 1;
     return (
       <div className="factory-item factory-item--double answer-factory-item">
         <p> Answer {this.state.id + 1} </p>
@@ -53,8 +54,8 @@ class AnswerFactory extends Component {
         </div>
         <div>
           <small> Pontuation for the result:</small>
-          { this.props.resultOptions.map((resultOption, i) => {
-            if (resultOptionsLength === i) {
+          { availableResults.map((resultOption, i) => {
+            if (resultOptionsLength === i || !resultOption) {
               return(null)
             };
             return(

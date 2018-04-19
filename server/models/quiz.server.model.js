@@ -1,6 +1,9 @@
 import mongoose from 'mongoose';
 
 var Schema = mongoose.Schema({
+  created: {
+    type: Date, default: Date.now
+  },
   thumbnail: {
     thumbnailImage: String,
     title: String

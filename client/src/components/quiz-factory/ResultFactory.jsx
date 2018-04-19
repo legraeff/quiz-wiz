@@ -15,6 +15,7 @@ class ResultFactory extends Component {
     this.updateResultKey = this.updateResultKey.bind(this);
   }
 
+
   updateResultTitle(event) {
     this.setState({resultTitle: event.target.value}, ()=> { this.props.updateFunction(this.state, "resultOptions")});
   }
@@ -26,9 +27,13 @@ class ResultFactory extends Component {
   }
 
   render() {
+    let removeButton;
+    if (!this.props.isLast) {
+      removeButton = <small className="remove-button" onClick={() => this.props.removeFunction(this.state.id, "resultOptions")}> REMOVE </small>
+    }
     return (
       <div className="factory-item factory-item--double">
-        <p> Result {this.state.id + 1} </p>
+        <p> Result {this.state.id + 1} {removeButton} </p>
         <div>
           <label htmlFor={this.state.id + '-resultTitle'}>Result Title</label>
           <input id={this.state.id + '-resultTitle'} name={this.state.id + '-resultTitle'} type="text" onChange={this.updateResultTitle}/>
